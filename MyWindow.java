@@ -17,10 +17,9 @@ public class MyWindow extends JFrame {
         setLocation(300, 50);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // ✅ Create main panel with light background
-        JPanel panel = new JPanel();
+=        JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(2, 1));
-        panel.setBackground(new Color(255, 230, 230)); // light background
+        panel.setBackground(new Color(255, 230, 230)); 
         setContentPane(panel);
 
         createGUI(panel);
@@ -36,7 +35,6 @@ public class MyWindow extends JFrame {
         heading.setFont(font);
         clockLabel.setFont(font);
 
-        // ✅ Dark red text color
         heading.setForeground(new Color(139, 0, 0));
         clockLabel.setForeground(new Color(139, 0, 0));
 
@@ -51,7 +49,6 @@ public class MyWindow extends JFrame {
     }
 
     private void startClock() {
-        // ✅ Use Swing Timer (thread-safe)
         Timer timer = new Timer(1000, e -> {
             String time = new SimpleDateFormat("hh:mm:ss a").format(new Date());
             clockLabel.setText(time);
